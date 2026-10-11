@@ -1,7 +1,6 @@
 name: Test Workflow
 
 on:
-  workflow_dispatch:
   push:
 
 jobs:
@@ -9,5 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello
-        run: echo "Hello World"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: List Files
+        run: ls -la
+
+      - name: Display Message
+        run: echo "Hello from GitHub Actions"
