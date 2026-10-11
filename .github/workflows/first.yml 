@@ -1,12 +1,13 @@
-name: My First Workflow
+name: Test Workflow
 
-"on":
+on:
+  workflow_dispatch:
   push:
 
 jobs:
-  first-job:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Display Message
-        run: echo "Hello from GitHub Actions"
+      - name: Hello
+        run: echo "Hello World"
