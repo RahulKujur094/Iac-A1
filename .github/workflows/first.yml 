@@ -8,8 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: List Files
-        run: ls
-
       - name: Display Message
         run: echo "Hello from GitHub Actions"
