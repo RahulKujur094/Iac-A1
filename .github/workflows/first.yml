@@ -1,18 +1,20 @@
-name: Test Workflow
+name: Java Build
 
 on:
   push:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: List Files
-        run: ls -la
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Display Message
-        run: echo "Hello from GitHub Actions"
+      - name: Build using Maven
+        run: mvn clean package
